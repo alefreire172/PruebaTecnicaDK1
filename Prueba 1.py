@@ -78,7 +78,7 @@ print(f"Rango de fechas: {df['Date'].min()} a {df['Date'].max()}")
 print(f"Total registros: {len(df)}")
 
 # ======================================================
-# PASO 2 — CÁLCULO DE EQUIPOS
+# CÁLCULO DE EQUIPOS
 # ======================================================
 
 df["Equipo1"] = 0.2 * df["X"] + 0.8 * df["Y"]
@@ -87,7 +87,7 @@ df["Equipo2"] = (df["X"] + df["Y"] + df["Z"]) / 3
 print("\nEquipos calculados")
 
 # ======================================================
-# PASO 3 — CLASE TIME SERIES PREDICTOR
+# CLASE TIME SERIES PREDICTOR
 # ======================================================
 
 class TimeSeriesPredictor:
@@ -294,7 +294,7 @@ class TimeSeriesPredictor:
         return np.array(predictions)
 
 # ======================================================
-# PASO 4 — ENTRENAR MODELOS
+# ENTRENAR MODELOS
 # ======================================================
 
 print("\n" + "="*50)
@@ -318,7 +318,7 @@ print("\nResultados Equipo 2:")
 print(results2[['Modelo', 'MAE', 'RMSE', 'R2']])
 
 # ======================================================
-# PASO 5 — SELECCIONAR MEJORES MODELOS
+# SELECCIONAR MEJORES MODELOS
 # ======================================================
 
 best_model1 = results1.loc[results1['RMSE'].idxmin(), 'Modelo']
@@ -328,7 +328,7 @@ print(f"\nMejor modelo para Equipo 1: {best_model1}")
 print(f"Mejor modelo para Equipo 2: {best_model2}")
 
 # ======================================================
-# PASO 6 — PREDICCIONES FUTURAS
+# PREDICCIONES FUTURAS
 # ======================================================
 
 print("\n" + "="*50)
@@ -339,7 +339,7 @@ future_pred1 = predictor1.predict_future(best_model1, n_periods=36)
 future_pred2 = predictor2.predict_future(best_model2, n_periods=36)
 
 # ======================================================
-# PASO 7 — FECHAS FUTURAS
+# FECHAS FUTURAS
 # ======================================================
 
 ultima_fecha = df['Date'].max()
@@ -352,7 +352,7 @@ fechas_futuras = pd.date_range(
 print(f"Predicciones desde {fechas_futuras[0].strftime('%Y-%m')} hasta {fechas_futuras[-1].strftime('%Y-%m')}")
 
 # ======================================================
-# PASO 8 — CLASE KPI (NUEVO - AÑADIDO AQUÍ)
+# CLASE KPI
 # ======================================================
 
 print("ANÁLISIS DE KPIS AVANZADOS")
@@ -597,7 +597,7 @@ class KPIAnalisis:
         return self.resultados
 
 # ======================================================
-# PASO 9 — EJECUTAR KPIS
+# EJECUTAR KPIS
 # ======================================================
 
 print("EJECUTANDO ANÁLISIS DE KPIS")
@@ -606,7 +606,7 @@ analisis_kpis = KPIAnalisis(df)
 resultados_kpis = analisis_kpis.ejecutar_todos_kpis()
 
 # ======================================================
-# PASO 10 — VISUALIZACIÓN PREDICCIONES
+# VISUALIZACIÓN PREDICCIONES
 # ======================================================
 
 fig, axes = plt.subplots(1, 2, figsize=(16, 6))
@@ -634,7 +634,7 @@ plt.savefig('Resultados/predicciones_finales.png', dpi=150)
 plt.show()
 
 # ======================================================
-# PASO 11 — CÁLCULO DE COSTOS TOTALES
+# CÁLCULO DE COSTOS TOTALES
 # ======================================================
 
 costo_total_eq1 = future_pred1.sum()
@@ -648,7 +648,7 @@ print(f"Equipo 2: ${costo_total_eq2:,.2f}")
 print(f"Total Proyecto: ${costo_total_eq1 + costo_total_eq2:,.2f}")
 
 # ======================================================
-# PASO 12 — GUARDAR RESULTADOS FINALES
+# GUARDAR RESULTADOS FINALES
 # ======================================================
 
 resultados_finales = pd.DataFrame({
