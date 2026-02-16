@@ -1,0 +1,6 @@
+RESULTADOS DE KPIS
+==================================================
+{'riesgo': {'Equipo1': {'VAR_95': np.float64(263.4468), 'VAR_90': np.float64(311.7368), 'colchon_%': np.float64(41.909373552953625)}, 'Equipo2': {'VAR_95': np.float64(644.5813333333333), 'VAR_90': np.float64(685.5046666666666), 'colchon_%': np.float64(30.56699161594945)}}, 'estacionalidad': {'X': {'mejor_mes': 'Dic', 'peor_mes': 'May', 'ahorro_potencial': np.float64(3.2472352458800535)}, 'Y': {'mejor_mes': 'Nov', 'peor_mes': 'Abr', 'ahorro_potencial': np.float64(4.965992317091416)}, 'Z': {'mejor_mes': 'Jun', 'peor_mes': 'Abr', 'ahorro_potencial': np.float64(2.1228544866879417)}}, 'correlacion':           X         Y         Z
+X  1.000000  0.470747  0.471994
+Y  0.470747  1.000000  0.796488
+Z  0.471994  0.796488  1.000000, 'eficiencia': {'X': {'precio_actual': np.float64(87.55), 'eficiencia': np.float64(1.121709315560403), 'estado': 'Esperar mejora'}, 'Y': {'precio_actual': np.float64(545.0), 'eficiencia': np.float64(0.9820855689516926), 'estado': 'Excelente momento'}, 'Z': {'precio_actual': np.float64(2152.5), 'eficiencia': np.float64(1.0583898875915756), 'estado': 'Esperar mejora'}}}
